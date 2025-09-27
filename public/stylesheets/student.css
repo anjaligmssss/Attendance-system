@@ -1,0 +1,158 @@
+/* ===========================
+   Global Reset & Typography
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* ===========================
+   Slightly Darker Gradient Background
+=========================== */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background: linear-gradient(-45deg, #e07b8a, #d0a0b0, #c594d0, #8ea0d0);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+}
+
+/* ===========================
+   Glass Panel Container (Slightly Darker)
+=========================== */
+.panel-container {
+    background: rgba(220, 220, 220, 0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 45px 50px;
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+/* ===========================
+   Heading
+=========================== */
+.panel-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+}
+
+/* ===========================
+   Form Inputs
+=========================== */
+form input {
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #222;
+    background: rgba(240, 240, 240, 0.9);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+form input::placeholder {
+    color: #aaa;
+}
+
+form input:focus {
+    background: rgba(220, 220, 220, 0.95);
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Submit Button
+=========================== */
+.btn {
+    width: 100%;
+    background: rgba(220, 220, 220, 0.25);
+    border: 1px solid rgba(220, 220, 220, 0.4);
+    color: #f9f9f9;
+    padding: 16px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+    background: rgba(220, 220, 220, 0.35);
+    border-color: rgba(220, 220, 220, 0.6);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(0,0,0,0.35);
+}
+
+/* ===========================
+   Message Box
+=========================== */
+.message {
+    margin-top: 25px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    word-wrap: break-word;
+}
+
+.message.success {
+    background: rgba(50, 100, 50, 0.5);
+    border: 1px solid rgba(100, 200, 100, 0.5);
+    color: #d4ffd4;
+}
+
+.message.error {
+    background: rgba(100, 50, 50, 0.5);
+    border: 1px solid rgba(200, 100, 100, 0.5);
+    color: #ffd4d4;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 500px) {
+    .panel-container {
+        padding: 35px 30px;
+    }
+
+    .panel-container h1 {
+        font-size: 2rem;
+    }
+
+    form input {
+        padding: 14px 18px;
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 1.1rem;
+    }
+}

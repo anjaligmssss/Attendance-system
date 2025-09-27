@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Panel</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/stylesheets/teacher.css">
+</head>
+<body>
+<div class="panel-container">
+  <h1>Teacher Panel</h1>
+
+  <form action="/teacher/generate" method="POST">
+    <input type="text" name="className" placeholder="Enter Class Name" required>
+    <input type="text" name="subject" placeholder="Enter Subject" required>
+    <button type="submit" class="btn">Generate Code</button>
+  </form>
+
+  <% if (code) { %>
+    <div class="code-display animate">
+      Generated Code: <span class="highlight"><%= code %></span> (Valid 1 min)
+    </div>
+  <% } %>
+
+  <a href="/teacher/export" class="btn" style="margin-top:20px;">Download Attendance Excel</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* style.css */
+
+/* Animated Gradient Background */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4facfe, #43e97b);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    color: #ffffff;
+}
+
+/* Glass Card */
+.landing-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 50px 60px;
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Icon */
+.icon-header {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+/* Typography */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #eaeaea;
+    margin-bottom: 45px;
+    line-height: 1.7;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 18px 28px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(0,0,0,0.3);
+}
+
+.btn i {
+    font-size: 1.3rem;
+}
+
+/* Responsive */
+@media (min-width: 650px) {
+    .buttons {
+        flex-direction: row;
+    }
+}
