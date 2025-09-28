@@ -11,10 +11,14 @@ const studentRouter = require('./routes/student');
 
 const app = express();
 
-// MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/attendanceSystem')
+
+// MongoDB Atlas connection
+require('dotenv').config(); // load environment variables
+
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
+
 
 
 // view engine
